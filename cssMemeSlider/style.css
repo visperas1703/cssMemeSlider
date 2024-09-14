@@ -34,11 +34,17 @@
     justify-content: space-between;
 }
 
-
-.slider-text {
+.slider-text p {
     font-size: 1.5rem; 
     text-align: center;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
 }
+
+.slider-text p.visible {
+    opacity: 1;
+}
+
 
 .controls {
     display: flex;
@@ -64,5 +70,21 @@
 
 .control:hover {
     background-color: gray;
-    
+}
+
+@media (min-width: 20rem) and (max-width: 48rem) {
+    .slider-desc {
+        display: flex;
+        flex-direction: column-reverse;
+    }
+
+    .slider-text{
+        text-align: left;
+    }
+
+    .controls {
+        display: flex;
+        margin-top: 1rem;
+        justify-content: center;
+    }
 }

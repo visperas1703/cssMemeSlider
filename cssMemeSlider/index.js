@@ -36,8 +36,18 @@ function updateActiveControl(index) {
 }
 
 function updateSlideCaption(index) {
-    slideCaption.textContent = captions[index];
+    const slideCaption = document.getElementById('slide-caption');
+    slideCaption.classList.remove('visible');
+
+    setTimeout(() => {
+        slideCaption.textContent = captions[index]; 
+        slideCaption.classList.add('visible');
+    }, 500); 
 }
+
+
+
+
 
 updateActiveControl(0);
 updateSlideCaption(0);
