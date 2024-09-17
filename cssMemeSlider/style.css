@@ -1,0 +1,95 @@
+.container {
+    width: 90vw;
+    max-width: 80rem;
+    min-width: 28.125rem;
+    margin: 0 auto;
+}
+
+.slider {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    border: 0.3rem solid red;
+    margin: 2rem auto;
+    overflow: hidden;
+    position: relative;
+}
+
+.slider-line {
+    display: flex;
+    width: 500%; 
+    transition: transform 0.5s ease;
+}
+
+.slide {
+    width: 20%; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.slide img {
+    width: 100%;
+    height: auto;
+    object-fit: fill;
+}
+
+.slider-caption {
+    font-size: 1.5rem;
+    text-align: center;
+    margin-top: 1rem;
+}
+
+#slide1:checked ~ .slider-line {
+    transform: translateX(0);
+}
+
+#slide2:checked ~ .slider-line {
+    transform: translateX(-20%);
+}
+
+#slide3:checked ~ .slider-line {
+    transform: translateX(-40%);
+}
+
+#slide4:checked ~ .slider-line {
+    transform: translateX(-60%);
+}
+
+#slide5:checked ~ .slider-line {
+    transform: translateX(-80%);
+}
+
+
+.controls {
+    display: flex;
+    justify-content: right;
+    margin-top: 1rem;
+}
+
+.control {
+    width: 1.5rem;
+    height: 1.5rem;
+    background-color: red;
+    border-radius: 50%;
+    margin: 0 0.5rem;
+    cursor: pointer;
+    border: 0.4rem solid white;
+    transition: background-color 0.3s;
+}
+
+.control:hover {
+    background-color: gray;
+}
+
+input[type="radio"] {
+    display: none;
+}
+
+
+@media (min-width: 20rem) and (max-width: 48rem) {
+
+    .controls{
+        justify-content: center;
+    }
+}
